@@ -1,0 +1,79 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="address.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<title>MASHAddress</title>
+</head>
+
+<body>
+	<header>
+	<nav>
+		<div class="logo">
+			<a class="a active" href="index.html">HOME</a>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<a class="a active" href="profile.html" href="#">Profile</a>
+			</li>
+			<li>
+				<a class="a active" href="work.html" href="#">Work</a>
+			</li>
+			<li>
+				<a class="a active" href="quotes.html" href="#">Quotes</a>
+			</li>
+		</ul>
+		<div class="content">
+                    <center><h1 class="about" >About our Gallery
+                    <img src="img/loc.png" width="50">
+                    </h1>
+
+                        <div id="map" style="width:900px;height:400px"></div>
+
+                        <script>
+                           function initMap() {
+                            var mapOptions = {
+                                zoom: 30,
+                                center: new google.maps.LatLng(-7.944917, 112.617056),
+                                mapTypeId: 'roadmap'
+                            };
+                            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                
+                            var arcakeLocation = {lat:-7.944917,lng: 112.617056};
+                            var marker = new google.maps.Marker({
+                                position: arcakeLocation,
+                                map: map,
+                                title: 'Arcake Location'
+                        });
+                            var contentString = '<h2>This Our Store!</h2>';
+                
+                            var infowindow = new google.maps.InfoWindow({
+                                content: contentString
+                            });
+                
+                            marker.addListener('click', function() {
+                                infowindow.open(map, marker);
+                            });
+                        }
+                        </script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF2F3iFyp6Snbb2_G64818EktCSajvWpQ&callback=initMap"></script><br>
+                        <h2 class="aboutUs" style="color: black;border: 4px solid white;padding: 10px;margin: 0 200px 0 200px">Senggani Street No . 20<br>
+                        Malang City</h2></center>
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+</header>
+	<script src="app.js"></script>
+</body>
+
+</html>

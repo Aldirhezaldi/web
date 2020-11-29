@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal No 1</title>
+	 <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+</head>
+<body>
+	<header>
+        <nav id="webBrand" class="navbar-dark bg-primary" style="padding-left: 16px;">
+            <a class="navbar-brand">
+                <img src="img/gundam.png"  width="60px" height="60px"> AldiRhezaldi</a>
+        </nav>
+    </header>
+	<h1 style="text-align: center;">Pengisian Form</h1>
+	<hr>
+	<div class="container-fluid pl-4 p-3">
+		<div class="row">
+			<div class="col-sm-12">
+				<form action="Genap1(2).html" method="get" onsubmit="return senddata()">Your Name * First *: <input type="text" name="fName" required placeholder="Aldi"> * Last *: <input type="text" name="lName" placeholder="Rhezaldi" required> <br>
+                <hr>
+				<b>Flash fill in this field in automatically. You can replace the text.</b><br><br> Send Email To : <input type="email" placeholder="rhezaldiirnantyo339g@gmail.com" name="email" required>
+				<br>
+                <hr>
+                <b>Select The Category</b>
+                <br>
+                <br>
+                <input type="radio" name="isi" value="VIP">VIP<br>
+                <input type="radio" name="isi" value="Premium">Premium<br>
+                <input type="radio" name="isi" value="Basic">Basic<br>
+                <p>Phone : <input type="number" placeholder="+6285-8503-36940" name="phone_number"></p>
+                <p>Date : <input type="date" name="date"></p>
+                <hr>
+                <textarea placeholder="Message : " style="height: 90px;" name="message"></textarea><br><br>
+                <button type="submit" class="btn btn-success" value="Kirim" name="send">Show Result</button>
+                <button type="reset" class="btn btn-danger" value="Reset" name="reset">Reset Fields</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<footer>
+            <nav id="webBrand" class="navbar-dark bg-primary text-center">
+                <span class="navbar-text mx-2">Copyright by AldiRhezaldi &copy; 2019</span>
+            </nav>
+    </footer>
+</html>

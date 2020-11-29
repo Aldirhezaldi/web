@@ -1,0 +1,28 @@
+#box{
+    background-image: url('img/bg.jpg');
+    
+}
+
+h1{
+    margin-left: 3px;
+}
+
+input{
+    margin-left: 3px;
+}
+
+label{
+    margin-left: 3px;
+}
+
+#input_textarea{
+    margin-left: 3px;
+}
+
+#date1{
+    margin-left: 3px;
+}
+
+#date_ex{
+    margin-left: 3px;
+}

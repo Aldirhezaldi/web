@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+    <title>No 1 action</title>
+    <script>
+        console.log(window.location.search);
+        document.getElementById("item").textContent = window.location.search.toString();
+    </script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            var url = window.location.search;
+            var s = new URLSearchParams(url);
+            var fnama = s.get("fName");
+            var lnama = s.get("lName");
+            var email = s.get("email");
+            var category = s.get("isi");
+            var notelp = s.get("phone_number");
+            var tanggal = s.get("date");
+            var msg = s.get("message");
+
+            document.getElementById("fnama").textContent = fnama;
+            document.getElementById("lnama").textContent = lnama;
+            document.getElementById("email").textContent = email;
+            document.getElementById("category").textContent = category;
+            document.getElementById("tanggal").textContent = tanggal;
+            document.getElementById("notelp").textContent = notelp;
+            document.getElementById("message").textContent = msg;
+
+        });
+    </script>
+    <header>
+        <nav id="webBrand" class="navbar-dark bg-primary" style="padding-left: 16px;">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/profile.png" alt="profilelogo" width="30px" height="30px"> AldiRhezaldi</a>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="1Form.html" class="nav-link">Soal 1</a>
+                    </li>   
+                </ul>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid pl-4 p-3">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Result Form</h2>
+                    <hr>
+                    <br><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <td>:</td>
+                                <td id="fnama"></td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>:</td>
+                                <td id="lnama"></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>:</td>
+                                <td id="email"></td>
+                            </tr>
+                            <tr>
+                                <th>Category</th>
+                                <td>:</td>
+                                <td id="category"> </td>
+                            </tr>
+                            <tr>
+                                <th>No Telpon</th>
+                                <td>:</td>
+                                <td id="notelp"></td>
+                            </tr>
+                            <tr>
+                                <th>Tanggal</th>
+                                <td>:</td>
+                                <td id="tanggal"></td>
+                            </tr>
+                            <tr>
+                                <th>Message</th>
+                                <td>:</td>
+                                <td id="message"></td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <br>
+                    <a href="1Form.html"><button class="btn btn-success">Back to Order Form</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+            <nav id="webBrand" class="navbar-dark bg-primary text-center">
+                <span class="navbar-text mx-2">Copyright by AldiRhezaldi &copy; 2019</span>
+            </nav>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+    <title>UTS No 1</title>
+</head>
+
+<body>
+    <header>
+        <nav id="webBrand" class="navbar-dark bg-primary" style="padding-left: 16px;">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/profile.png"  width="30px" height="30px"> AldiRhezaldi</a>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="1Form.html" class="nav-link">Soal nomor 1</a>
+                    </li>
+                </ul>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid pl-4 p-3">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Form</h2> <br>
+                    <form action="1act.html" method="get" onsubmit="return senddata()">
+                        Firstname: <input type="text" name="fName" required placeholder="Aldi"> Lastname: <input type="text" name="lName" placeholder="Rhezaldi" required> <br>
+                        <hr>
+                        <b>Flash fill in this field in automatically. You can replace the text.</b><br><br> Send Email To : <input type="email" placeholder="rhezaldiirnantyo339g@gmail.com" name="email" required><br>
+                        <hr>
+                        <b>Select Category</b><br>
+                        <input type="radio" name="isi" value="VIP">VIP<br>
+                        <input type="radio" name="isi" value="Premium">Premium<br>
+                        <input type="radio" name="isi" value="Basic">Basic<br><br> Phone : <input type="number" placeholder="+6285-8503-36940" name="phone_number" required min="0"><br><br> Date : <input type="date" name="date" required><br>
+                        <hr>
+                        <textarea placeholder="Message : " style="height: 90px;" name="message"></textarea><br><br>
+                        <button type="submit" class="btn btn-info" value="Kirim" name="send">Show Result</button>
+                        <button type="reset" class="btn btn-danger" value="Reset" name="reset">Reset Fields</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <nav id="webBrand" class="navbar-dark bg-primary text-center">
+                <span class="navbar-text mx-2">Copyright by AldiRhezaldi &copy; 2019</span>
+            </nav>
+        </footer>
+    </main>
+</body>
+</html>

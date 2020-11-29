@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styleTable.css">
+	<script src="jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			//menambah garis
+			$(".add-row").click(function(){
+				var name = $("#name").val();
+				var email = $("#email").val();
+				var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+				$("table tbody").append(markup);
+			});
+			//menghapus baris yang di centang
+			$(".delete-row").click(function(){
+				$("table tbody").find('input[name="record"]').each(function(){
+					if ($(this).is(":checked")) {
+						$(this).parents("tr").remove();
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="name" placeholder="Name">
+		<input type="text" id="email" placeholder="Email Address">
+		<input type="button" class="add-row" value="Add Row">
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th>Select</th>
+				<th>Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" name="record"></td>
+				<td>Tony Stark</td>
+				<td>tonystark@gmail.com</td>
+			</tr>
+		</tbody>
+	</table>
+	<button type="button" class="delete-row">Delete Row</button>
+</body>
+</html>
+$(document).ready(function(){
+			//menambah garis
+			$(".add-row").click(function(){
+				var first = $("#var1").val();
+				var last = $("#var2").val();
+				var email = $("#var3").val();
+				var kategory = $("var5").val();
+				var nomer = $("#var6").val();
+				var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + first+last + "</td><td>" + email + "</td><td>"+ kategory + "</td><td>"+ nomer + "</td></tr>";
+				$("table tbody").append(markup);
+			});
+			//menghapus baris yang di centang
+			$(".delete-row").click(function(){
+				$("table tbody").find('input[name="record"]').each(function(){
+					if ($(this).is(":checked")) {
+						$(this).parents("tr").remove();
+					}
+				});
+			});
+		});

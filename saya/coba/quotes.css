@@ -1,0 +1,138 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;;
+}
+header{
+	background-image: url('img/4.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow-y: auto;
+	width: 100%;
+	height: 100%;
+}
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: #5D4954;
+	font-family: 'Poppins', sans-serif;
+}
+.skuy{
+	position: absolute;
+	text-align: center;
+	right: 350px;
+	bottom: 450px;
+	color: white;
+	font-family:'Special Elite', sans-serif;
+	letter-spacing: 3px;
+	word-spacing: 8px;
+	font-size: 30px;
+}
+
+.logo{
+	color: rgb(226,226,226);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 25px;
+}
+
+.logo{
+	display: flex;
+	justify-content: space-around;
+	width: 30%;
+}
+.logo a{
+	color: rgb(226,226,226);
+	text-decoration: none;
+	letter-spacing: 5px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 30%;
+}
+.nav-links li{
+	list-style: none;
+}
+.nav-links a{
+	color: rgb(226,226,226);
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 300ms;
+}
+.nav-links a:hover{
+	color: grey;
+	font-size: 25;
+	width: 50;
+}
+
+.burger{
+	display: none;
+	cursor: pointer;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: rgb(226,226,226);
+	margin: 5px;
+}
+
+@media screen and (max-width: 1024px){
+	.nav-links{
+		width: 60;
+	}
+}
+
+
+@media screen and (max-width: 768px){
+	body{
+		overflow-x :hidden;
+	}
+	.nav-links{
+		position: absolute;
+		right: 0px;
+		height: 92vh;
+		top: 8vh;
+		background-color: #5D4954;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5 ease-in;
+	}
+	.nav-links li{
+		opacity: 0;
+	}
+	.burger{
+		display: block;
+	}
+
+}
+
+.nav-active{
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}

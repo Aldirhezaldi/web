@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kuis No 2</title>
+    <link rel="stylesheet" type="text/css" href="SoalNo2.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        function validate(){
+                var error="";
+                var bayar = document.getElementById("text_bayar");
+                if(bayar.value >= 300.000){
+                    error="Uang tidak mencukupi";
+                    document.getElementById( "error_para" ).innerHTML = error;
+                    return false;
+                }else if(bayar.value > 500.000){
+                    hasil = bayar.value - (575000 * (35/100))
+                    error=hasil;
+                    document.getElementById( "error_para" ).innerHTML = error;
+                    return false;
+                }else if(bayar.value == 575000){
+                    error="Uang Anda Pas";
+                    document.getElementById( "error_para" ).innerHTML = error;
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        $(document).ready(function(){
+            $(".add-row").click(function(){
+                var no = $ ("#no").val();
+                var jenis_barang = $("#jenis_barang").val();
+                var name = $("#name").val();
+                var harga_satuan = $("#harga_satuan").val();
+                var jumlah_beli = $("#jumlah_beli").val();
+                var total = $("#jumlah_beli").val();
+                var markup = "<tr><td><input type ='checkbox' name='record'></td><td>"
+                    + name + "</td><td>" + jenis_barang + "</td><td>" + name + "</td><td>" + 
+                    harga_satuan + "</td><td>" + jumlah_beli + "</td><td>" + total + "</td></tr>";
+                    $("table tbody").append(markup);
+            });
+
+            $(".delete-row").click(function(){
+                $("table tbody").find('input[name="record"]').each(function(){
+                    if($(this).is(":checked")){
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="no" placeholder="No">
+        <input type="text" id="jenis_barang" placeholder="Jenis Barang">
+        <input type="text" id="name" placeholder="Nama Barang">
+        <input type="text" id="harga_satuan" placeholder="Harga Satuan">
+        <input type="text" id="jumlah_beli" placeholder="Jumlah Beli">
+        <input type="text" id="total" placeholder="Total">
+        <input type="button" class="add-row" value="Add row">
+        <button type="button" class="delete-row">Delete Row</button>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <td colspan="7"><center>FORM PEMBELIAN BARANG TOKO LIVIA</center></td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Select</th>
+                <th>No</th>
+                <th>Jenis Barang</th>
+                <th>Nama Barang</th>
+                <th>Harga Satuan</th>
+                <th>Jumlah Beli</th>
+                <th>Total</th>
+
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="record" id=""></td>
+                <td>1</td>
+                <td>Celana</td>
+                <td>Celana Hitam</td>B
+                <td>150000</td>
+                <td>2</td>
+                <td>300000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="record" id=""></td>
+                <td>2</td>
+                <td>Kaos</td>
+                 <td>Kaos Putih</td>
+                 <td>100000</td>
+                <td>2</td>
+                <td>200000</td>
+                </tr>
+            <tr>
+                <td>Sub Total</td>
+                <td>500000</td>
+            </tr>
+            <tr>
+                <td>Diskon</td>
+                <td>35%</td>
+            </tr>
+            <tr>
+                <td>Total Setelah Diskon</td>
+                <td>325.000</td>
+            </tr>
+            <tr>
+                <td>Bayar</td>
+                <td><input type="text" id="text_bayar"></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="" onsubmit="return validate();">
+        <input type="submit" name="" id="submit_button" value="submit">
+        <input type="reset" name="" id="" value="batal">
+    </form>
+    <br><br>
+    
+    <p id="error_para"></p>
+</body>
+</html>

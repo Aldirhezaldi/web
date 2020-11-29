@@ -1,0 +1,9 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;;
+}
+.coba{
+	background-image: url("img/budi.png");
+	background-color: black;
+}

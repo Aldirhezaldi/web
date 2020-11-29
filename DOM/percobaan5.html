@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pengenalan JS</title>
+</head>
+<body>
+	<div id="dv">
+		<p id="p1">Ini adalah paragraf pertama</p>
+		<p id="p2">Ini adalah paragraf kedua</p>
+	</div>
+	<script>
+		// Membuat element <p>
+		var p3 = document.createElement("p");
+		var node = document.createTextNode('Ini paragraf ke 3 dengan Javascript');
+		// memasukkan text dalam element <p> baru
+		p3.appendChild(node);
+		// menambahkan <p> baru pada div id=dv
+		document.getElementById("dv").appendChild(p3);
+	</script>
+
+</body>
+</html>

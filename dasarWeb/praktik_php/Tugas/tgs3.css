@@ -1,0 +1,23 @@
+body{
+	background-color: whitesmoke;
+	font-family: Arial;
+  margin: 0;
+}
+.header {
+  background-color: blue;
+  padding: 20px;
+  text-align: center;
+}
+.header1{
+  background-color: grey;
+  padding: 20px;
+  color: white;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: blue;
+  text-align: center;
+}

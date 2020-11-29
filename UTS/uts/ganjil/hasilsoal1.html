@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var url = window.location.search;
+            var s = new URLSearchParams(url);
+            var category = s.get("category");
+            var select1 = s.get("select1");
+            var select2 = s.get("select2");
+            var select3 = s.get("select3");
+            var tanggal = s.get("tanggal");
+            var nama = s.get("nama");
+            var phone = s.get("phone");
+            var massage = s.get("massage");
+            var email2 = s.get("email2");
+
+            document.getElementById("category").textContent = category;
+            document.getElementById("select1").textContent = select1;
+            document.getElementById("select2").textContent = select2;
+            document.getElementById("select3").textContent = select3;
+            document.getElementById("tanggal").textContent = tanggal;
+            document.getElementById("nama").textContent = nama;
+            document.getElementById("phone").textContent = phone;
+            document.getElementById("massage").textContent = massage;
+            document.getElementById("email2").textContent = email2;
+
+        });
+    </script>
+</head>
+
+<body>
+    <p>category: </p>
+    <p id="category"></p><br>
+    <p>select1: </p>
+    <p id="select1"></p>
+    <p>select2: </p>
+    <p id="select2"></p>
+    <p>select3: </p>
+    <p id="select3"></p>
+    <p>tanggal: </p>
+    <p id="tanggal"></p>
+    <p>nama: </p>
+    <p id="nama"></p>
+    <p>phone: </p>
+    <p id="phone"></p>
+    <p>massage: </p>
+    <p id="massage"></p>
+    <p>email2: </p>
+    <p id="email2"></p>
+</body>
+
+</html>

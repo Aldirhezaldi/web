@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kuis No 1</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>console.log(window.location.search);
+        document.getElementById("item").textContent = window.location.search.toString();
+    </script>
+    
+</head>
+<body background="img/bg.jpg">
+    <script>
+        $(document).ready(function () {
+            var url = window.location.search;
+            var s = new URLSearchParams(url);
+            var nama = s.get("nama");
+            var email = s.get("email");
+            var category = s.get("category");
+            var notelp = s.get("notelp");
+            var tanggal = s.get("tanggal");
+
+            document.getElementById("nama").textContent = nama;
+            document.getElementById("email").textContent = email;
+            document.getElementById("category").textContent = category;
+            document.getElementById("notelp").textContent = notelp;
+            document.getElementById("tanggal").textContent = tanggal;
+
+        });    
+    </script>
+
+    <table border="9">
+        <thead>
+            <tr>
+                <th>NAMA</th>
+                <td id="nama"> </td>
+            </tr>
+            <tr>
+                <th>EMAIL</th>
+                <td id="email"></td> 
+            </tr>
+            <tr>
+                <th>CATEGORY</th>
+                <td id="category"></td> 
+            </tr>
+            <tr>
+                <th>NOTELP</th>
+                <td id="notelp"></td> 
+            </tr>
+            <tr>
+                <th>TANGGAL</th>
+                <td id="tanggal"></td> 
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

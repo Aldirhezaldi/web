@@ -1,0 +1,10 @@
+body {
+    background-image: radial-gradient(white, yellow);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: auto;
+    text-align: center;
+}

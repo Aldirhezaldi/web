@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+    <title>UTS No 2</title>
+    <script>
+        $(document).ready(function() {
+            var nomor = 0,
+                jenis_barang, nama_barang, harga_satuan, jumlah_beli, total, sum = 0,
+                sub_total = 0,
+                diskon = 0,
+                grand_total = 0,
+                bayar = 0;
+            $(".add-row").click(function() {
+                nomor = nomor + 1;
+                jenis_barang = $("#jenis_barang").val();
+                nama_barang = $("#nama_barang").val();
+                harga_satuan = $("#harga_satuan").val();
+                jumlah_beli = $("#jumlah_beli").val();
+                total = harga_satuan * jumlah_beli;
+                sum += total;
+                $("#sub_total").text(": " + sum);
+                if (sum >= 645000) {
+                    diskon = 1 - 0.35;
+                    $("#diskon").text(": 35%");
+                } else if (sum >= 430000) {
+                    diskon = 1 - 0.25;
+                    $("#diskon").text(": 25%")
+                } else if (sum >= 257000) {
+                    diskon = 1 - 0.15;
+                    $("#diskon").text(": 15%")
+                } else {
+                    diskon = 1
+                    $("#diskon").text(": -");
+                }
+                if (diskon != 0) {
+                    grand_total = sum * diskon;
+                    $("#grand_total").text(": " + grand_total);
+                }
+                var markup = "<tr><td><input type='checkbox' name = 'record'></td><td>" + nomor + "</td>" + "</td><td>" + jenis_barang + "</td><td>" + nama_barang + "</td><td>" + harga_satuan + "</td><td>" + jumlah_beli + "</td><td>" + total + "</td><tr>"
+                $(".data tbody").append(markup);
+            });
+            $("#submit").click(function() {
+                bayar = $("#bayar").val();
+                if (bayar >= grand_total) {
+                    alert("Uang kembalian: " + (bayar - grand_total));
+                    alert("Terima Kasih sudah berbelanja di Toko Kue");
+                    location.href = '2Toko.html';
+                } else {
+                    alert("Maaf uang Anda tidak mencukupi!");
+                }
+            });
+            $(".delete-row").click(function() {
+                $("table tbody").find('input[name="record"]').each(function() {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav id="webBrand" class="navbar-dark bg-primary" style="padding-left: 16px;">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/profile.png" alt="profilelogo" width="30px" height="30px">AldiRhezaldi</a>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="2Toko.html" class="nav-link">Soal 2</a>
+                    </li>
+                </ul>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main style="background-color: whitesmoke;;">
+        <div class="container-fluid pl-4 p-3">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Form Pembelian Barang</h2> <br>
+                    <table class="ml-auto mr-auto">
+                        <tr>
+                            <td>
+                                <input type="text" id="jenis_barang" placeholder="Jenis Kue">
+                            </td>
+                            <td>
+                                <input type="text" id="nama_barang" placeholder="Nama Kue">
+                            </td>
+                            <td>
+                                <input type="number" id="harga_satuan" placeholder="Harga Satuan">
+                            </td>
+                            <td>
+                                <input type="number" id="jumlah_beli" placeholder="Jumlah Beli">
+                            </td>
+                            <td>
+                                <input type="button" class="add-row" value="Tambahkan">
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <h2 class="text-center">Tabel Pembelian</h2> <br>
+                    <table class="data ml-auto mr-auto" border="1">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>No</th>
+                                <th>Jenis Kue</th>
+                                <th>Nama Kue</th>
+                                <th>Harga Satuan</th>
+                                <th>Jumlah Beli</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <table class="ml-auto mr-auto">
+                        <tr>
+                            <td colspan="7">
+                                <center>
+                                    <button type="button" class="delete-row" value="Delete Row">Delete</button>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <table border="3">
+                        <tr>
+                            <th>Total Belanja</th>
+                            <th>Diskon</th>
+                        </tr>
+                        <tr>
+                            <th>>=257.000</th>
+                            <th>15%</th>
+                        </tr>
+                        <tr>
+                            <th>>=430.000</th>
+                            <th>25%</th>
+                        </tr>
+                        <tr>
+                            <th>>=645.000</th>
+                            <th>35%</th>
+                        </tr>
+                    </table>
+                    <hr>
+                    <table>
+                        <h2 style="text-align: center;">Pembayaran</h2>
+                        <br>
+                        <tr>
+                            <td>Sub Total</td>
+                            <td id="sub_total">: </td>
+                        </tr>
+                        <tr>
+                            <td>Diskon</td>
+                            <td id="diskon">: </td>
+                        </tr>
+                        <tr>
+                            <td>Grand Total</td>
+                            <td id="grand_total">: </td>
+                        </tr>
+                        <tr>
+                            <td>Bayar</td>
+                            <td>: <input type="number" id="bayar"></td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <input type="submit" class="btn btn-primary" value="Submit" id="submit">
+                    <button class="btn btn-danger mr-auto" onclick="window.location.href='2Toko.html'">Batal</button>
+                </div>
+            </div>
+        </div>
+         <footer>
+            <nav id="webBrand" class="navbar-dark bg-primary text-center">
+                <span class="navbar-text mx-2">Copyright by AldiRhezaldi &copy; 2019</span>
+            </nav>
+        </footer>
+    </main>
+</body>
+
+</html>

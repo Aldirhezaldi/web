@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Soal 2</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".add-row").click(function () {
+                var checkedlist = $("#checkedlist").val();
+                var no = $("#no").val();
+                var jenisbarang = $("#jenisbarang").val();
+                var namabarang = $("#namabarang").val();
+                var hargasatuan = $("#hargasatuan").val();
+                var jumlahbeli = $("#jumlahbeli").val();
+                var total = hargasatuan * jumlahbeli;
+                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + no + "</td><td>"
+                    + jenisbarang + "</td><td>" + namabarang + "</td><td>" + hargasatuan + "</td><td>"
+                    + jumlahbeli + "</td><td>" + total + "</td></tr>";
+                $("table tbody").append(markup);
+            });
+            $(".delete-row").click(function () {
+                $("table tbody").find('input[name="record"]').each(function () {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+        function subtotal() {
+            let rows = document.querySelectorAll("table tr td:last-child");
+            let sum = 0;
+            for (let i = 0; i < rows.length - 1; i++) {
+                sum += Number(rows[i].textContent);
+            }
+            document.getElementById("subtotal").textContent = sum;
+        }
+        function discount() {
+            var subtotal = document.getElementById("subtotal").innerHTML;
+            if (subtotal >= 252000 && subtotal < 439000) {
+                document.getElementById("discount").textContent = 11;
+            } else if (subtotal >= 439000 && subtotal < 640000) {
+                document.getElementById("discount").textContent = 21;
+            } else if (subtotal >= 640000) {
+                document.getElementById("discount").textContent = 35;
+            } else {
+                document.getElementById("discount").textContent = 0;
+            }
+        }
+        function grandtotal() {
+            var subtotal = document.getElementById("subtotal").innerHTML;
+            var discount = document.getElementById("discount").innerHTML;
+            var grandtotal = subtotal - (subtotal * (discount / 100));
+            document.getElementById("Gtotal").textContent = grandtotal;
+        }
+        function bayar() {
+            var grandtotal = document.getElementById("Gtotal").innerHTML;
+            var bayar = $("#bayar").val();
+            var kembalian = bayar - grandtotal;
+            if (kembalian < 0) {
+                alert('Eror, jumlahbayar tidak mencukupi');
+            } else {
+                alert('Kembali : ' + kembalian);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="number" id="no" placeholder="No">
+        <input type="text" id="jenisbarang" placeholder="Jenis barang">
+        <input type="text" id="namabarang" placeholder="Nama barang">
+        <input type="number" id="hargasatuan" placeholder="Harga satuan">
+        <input type="number" id="jumlahbeli" placeholder="Jumlah beli">
+        <button type="button" class="add-row" value="Add Row">Add row</button>
+    </form>
+    <table>
+        <thead>
+            <th colspan="7" style="text-align: center">Your Name</th>
+            <tr>
+                <th>Check</th>
+                <th>No</th>
+                <th>Jenis Barang</th>
+                <th>Nama Barang</th>
+                <th>Harga Satuan</th>
+                <th>Jumlah Beli</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <td><button onclick="subtotal()">Sub total</button></td>
+            <td id="subtotal"></td>
+        </thead>
+        <thead>
+            <td><button onclick="discount()">Diskon</button></td>
+            <td id="discount"></td>
+        </thead>
+        <thead>
+            <td><button onclick="grandtotal()">Grand Total</button></td>
+            <td id="Gtotal"></td>
+        </thead>
+        <thead>
+            <td>Bayar</td>
+            <td><input input type="number" id="bayar"></td>
+        </thead>
+    </table>
+    <button onclick="bayar()">Submit</button>
+    <button type="button" class="delete-row">Delete</button>
+</body>
+
+</html>

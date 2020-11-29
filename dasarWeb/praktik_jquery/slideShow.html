@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styleSlideShow.css">
+	<script src="jquery-3.4.1.js"></script>
+	<script>
+		var i=0;
+		$(document).ready(function(){
+			$('.slidertittle, #slider img').hide();
+			showNextImage();
+			setInterval('showNextImage()', 3000);
+		});
+		function showNextImage(){
+			i++;
+			$('#sliderImage' + i).appendTo('#slider').fadeIn(1100).delay(1100).fadeOut(1100);
+			$('#tittle' + i).appendTo('#slider').fadeIn(1100).delay(1100).fadeOut(1100);
+			if(i==3){
+				i=0;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="slider">
+		<img id="sliderImage1" src="img/tree1.jpg">
+		<div class="slidertittle" id="tittle1">Gambar1</div>
+
+		<img id="sliderImage2" src="img/bunga1.jpg">
+		<div class="slidertittle" id="tittle2">Gambar2</div>
+
+		<img id="sliderImage3" src="img/feild1.jpg">
+		<div class="slidertittle" id="tittle3">Gambar3</div>
+	</div>
+
+</body>
+</html>

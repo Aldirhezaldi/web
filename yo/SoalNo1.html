@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kuis No 1</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="SoalNo1.css">
+    <script>
+        $(function(){
+            $("#date_ex").datepicker();
+        });
+
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                alert($("#category").val())
+                alert($("#input_nama").val())
+                alert($("#input_phone").val())
+                alert($("#input_textarea").val())
+                alert($("#input_email").val())
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box" style="border: 3px solid black">
+        <form method="GET" action="SoalNo1(2).html">
+
+    <div id="category_pilih" style="border: 2px solid black">
+
+        Name  : <input type="text" name="nama" placeholder="Rhezaldi Irnantyo Irawan"><hr><br>
+        Send to email : <input type="email" name="email" placeholder="rhezaldiirnantyo339g@gmail.com" required> <hr><br>
+            <h1>Select the category</h1>
+       <input type="radio" name="category" value="vip">VIP <br>
+            <input type="radio" name="category" value="premium">Premium <br>
+            <input type="radio" name="category" value="basic">basic <br>
+    </div>
+    
+    <div style="border: 1px solid black">
+        Phone : <input type="text" name="notelp" placeholder="085850336940"> <br>
+        <label>Date : </label><input type="date" name="tanggal" nama="date_ex" placeholder="dd-mm-yyy">
+    </div>
+<div id="submit_button" style="border: 2px solid black">
+    <input type="submit" id="submit" value="Send">
+    <input type="reset" value="Reset">
+    <br>
+</div>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Belajar Info windows marker</title>
+    <style>
+
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--tampil peta-->
+    <div id="map"></div> 
+    
+    <script>
+      function initMap() {
+        
+        // membuat titik koordinat
+        var lombok = {lat: -7.320871, lng: 112.792653};
+        
+        // membuat peta
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom : 9,
+        center : lombok
+      });
+
+        // tulisan untuk info window
+        var contentString = '<h2>Hello Dunia!</h2>';
+
+        // info window
+       var infowindow = new google.maps.InfoWindow({
+        content : contentString,
+        position : lombok
+      });
+        
+        // membuat marker
+        var marker = new google.maps.Marker({
+          position: lombok,
+          map: map,
+          title: 'Hello Dunia!'
+        });
+        
+        // fungsi untuk menampilkan info windo saat penanda diklik
+        marker.addListener('click', function() {
+          // tampilan info winsow
+          infowindow.open(map, marker);
+        });
+        
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+    </script>
+
+  </body>
+</html>
